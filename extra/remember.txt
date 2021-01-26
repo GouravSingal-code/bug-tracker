@@ -1,0 +1,57 @@
+when you are inserting date through js then make sure that you input date string should be in same format as you input type date format
+
+eg 06/01/2020
+so remeber this format should be dd/mm/yyyy
+dd means 2 digits so therefore if date is 2 then write 02
+same for mm and yyyy( 4 digits)
+
+
+to travers in table
+document.getElementById("table name").rows[row_index].cells[col_index].innerHTML = value which you have to insert or you can also extract the value using this methods
+
+
+rember the concept of children and childNodes( this concept is used in tree type structure )
+
+<div id="x">
+
+  <div id="a">
+   <div id="b">
+    <div id="c"></div>
+   </div>
+  </div>
+
+ <div id="d"></div>
+
+ <div id="e"></div>
+
+</div>
+
+
+document.getElementById("x").childnodes[1] == div with id "a"
+document.getElementById("x").childnodes[2] == div with id "d"
+document.getElementById("x").childnodes[3] == div with id "e"
+
+document.getElementById("x").childNodes[1].childNodes[1].childNodes[1] = div with id "c";
+
+
+for children see from w3schools
+
+
+
+
+if multiple element have same id then use querySelectorAll for this to travel from all over
+document.querySelectorAll("name of id").length will give us how many elements will have this id
+
+
+
+cursor.hasNext()
+cursor.next()
+cursor.toArray()
+cursor.forEach()
+cursor.map()
+cursor.objsLeftInBatch()
+cursor.itcount()
+cursor.pretty()
+
+
+"<div><h6><%=name %></h6><h6><%= email %></h6><h6><%= project %></h6></div>"

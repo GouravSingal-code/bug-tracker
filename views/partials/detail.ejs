@@ -1,0 +1,131 @@
+<% if(typeof detail!='undefined' ){%>
+ <%detail.forEach( li =>{%>
+   <tr  style="text-align:center">
+   <td  id="data">
+     <div class="dropdown">
+       <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" >&otimes;</button>
+       <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a1" style="cursor:pointer" onclick="display(<%= li.id %> , 0)">Update Project</a></li>
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a2" style="cursor:pointer" onclick="remove(<%= li.id %>)">Trash Project</a></li>
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a3" style="cursor:pointer" onclick="complete(<%= li.id %>)">Completed</a></li>
+       </ul>
+     </div>
+   </td>
+   <td id="data"><a class="link" style="color:blue" href="/dashboard?project=<%=li.title %>" ><%= li.title %></a></td>
+   <td id="data"></td>
+   <td id="data"><%= li.owner %></td>
+   <td id="data">
+     <div class="dropdown">
+       <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" ><%= li.status %></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" id="a1" onclick="change(<%= li.id %> , 1 )">Active</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" id="a2" onclick="change(<%= li.id %> , 2)">In Progress</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" id="a3" onclick="change(<%= li.id %> , 3)">On Track</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1"id="a4" onclick="change(<%= li.id %> ,  4)">Delayed</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1"id="a5" onclick="change(<%= li.id %> , 5)">In Testing</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1"id="a6" onclick="change(<%= li.id %> , 6)">On Hold</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1"id="a7" onclick="change(<%= li.id %> , 7)">Approved</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1"id="a8" onclick="change(<%= li.id %> , 8)">Cancelled</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" id="a9" onclick="change(<%= li.id %> , 9)">Planning</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" id="a10"onclick="change(<%= li.id %> , 10)">Completed</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" id="a11" onclick="change(<%= li.id %> , 11)">Invoiced</a></li>
+       </ul>
+     </div>
+</td>
+   <td id="data"><div style="margin-left:auto;margin-right:auto;width:90px;text-align:center;background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);font-size:0.8em">No Milestones</div></td>
+   <td id="data"><div style="margin-left:auto;margin-right:auto;width:90px;text-align:center;padding-right:auto;background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);font-size:0.8em">No Bugs</div></td>
+   <td id="data" ><%= li.start %></td>
+   <td id="data"><%= li.end %></td>
+   <td id="data"></td>
+   <td id="data"></td>
+</tr>
+
+<%})%>
+<%}
+%>
+
+<% if( typeof bug_detail != 'undefined' ){%>
+ <%bug_detail.forEach( li =>{%>
+   <tr style="text-align:center">
+   <td  id="data">
+     <div class="dropdown">
+       <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" >&otimes;</button>
+       <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a1" style="cursor:pointer" onclick="display(<%= li.id %> , 0)">Update Bug</a></li>
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a2" style="cursor:pointer" onclick="remove(<%= li.id %>)">Trash Bug</a></li>
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a3"style="cursor:pointer" onclick="complete(<%= li.id %>)">Completed</a></li>
+       </ul>
+     </div>
+   </td>
+   <td id="data" style="color:blue"> <a href=""><%= li.title %></a> </td>
+   <td id="data"></td>
+   <td id="data"><%= li.time %></td>
+   <td id="data">
+   <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" ><%= li.status %></button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+     <li role="presentation"><a role="menuitem" tabindex="-1" id="a1" onclick="change(<%= li.id %> , 1)"> Open </a> </li>
+     <li role="presentation"><a role="menuitem" tabindex="-1" id="a2" onclick="change(<%= li.id %> , 2)"> In Progress </a> </li>
+     <li role="presentation"><a role="menuitem" tabindex="-1" id="a3" onclick="change(<%= li.id %> , 3)"> To Be Tested </a> </li>
+     <li role="presentation"><a role="menuitem" tabindex="-1" id="a4" onclick="change(<%= li.id %> , 4)"> Closed </a> </li>
+    </ul>
+  </div>
+</td>
+<td id="data" ><%= li.tag %></td>
+<td id="data"><%= li.assign_to %></td>
+<td id="data"><%= li.due %></td>
+<td id="data"><%= li.severity %></td>
+</tr>
+
+<%})%>
+<%}
+%>
+
+<% if( typeof event_detail != 'undefined' ){%>
+ <%event_detail.forEach( li =>{%>
+   <tr style="text-align:center">
+   <td  id="data">
+     <div class="dropdown">
+       <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" >&otimes;</button>
+       <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a1" style="cursor:pointer" onclick="display(<%= li.id %>)">Update Event</a></li>
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a2" style="cursor:pointer" onclick="remove(<%= li.id %>)">Trash Event</a></li>
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a3"style="cursor:pointer" onclick="complete(<%= li.id %>)">Completed</a></li>
+       </ul>
+     </div>
+   </td>
+   <td id="data"><a href="" style="color:blue"><%= li.title %></a></td>
+   <td id="data"><%= li.user %></td>
+   <td id="data"><%= li.begin %></td>
+   <td id="data"><%= li.end %></td>
+   <td id="data"><%= li.duration %></td>
+   <td id="data"><%= li.location %></td>
+   <td id="data"><%= li.repeat %></td>
+</tr>
+<%})%>
+<%}
+%>
+
+<% if( typeof milestone_detail != 'undefined' ){%>
+ <%milestone_detail.forEach( li =>{%>
+   <tr style="text-align:center">
+   <td  id="data">
+     <div class="dropdown">
+       <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" >&otimes;</button>
+       <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a1" style="cursor:pointer" onclick="display(<%= li.id %>)">Update MileStone</a></li>
+         <li role="presentation"><a  role="menuitem" tabindex="-1" id="a2" style="cursor:pointer" onclick="remove(<%= li.id %>)">Trash MileStone</a></li>
+        <li role="presentation"><a  role="menuitem" tabindex="-1" id="a3"style="cursor:pointer" onclick="complete(<%= li.id %>)">Completed</a></li>
+       </ul>
+     </div>
+   </td>
+   <td id="data"><a href="" style="color:blue"><%= li.title %></a></td>
+   <td id="data"><%= li.user %></td>
+   <td id="data"><%= li.tag %></td>
+   <td id="data"><%= li.start %></td>
+   <td id="data"><%= li.end %></td>
+   <td id="data"></td>
+</tr>
+<%})%>
+<%}
+%>

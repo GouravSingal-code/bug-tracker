@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href=
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+
+  <style>
+
+ html,body{
+   margin:0px;
+   height:100%;
+   width:100%;
+ }
+
+
+
+  table, th, td {
+    border: 5px solid black;
+  }
+
+
+  .detail{
+     text-align:center;
+  }
+
+  #data{
+   font-size: 1.2em;
+   height:80px;
+   padding-right:0;
+   padding-top:0;
+   width:14%;
+   border:5px solid #D3D3D3;
+   cursor:pointer;
+   position:relative;
+ }
+
+ #date_{
+  text-align: right;
+  margin-top:0px;
+ }
+
+ .message{
+   overflow-y:scroll;
+   height:75px;
+   position: relative;
+ }
+
+
+
+ .message::-webkit-scrollbar{
+   width: 1px;
+ }
+
+ .msg_div{
+   position:relative;
+ }
+
+
+
+ </style>
+
+  <body>
+
+
+        <nav class="navbar navbar navbar-dark bg-dark" >
+           <a class="navbar-brand" style="color:yellow" href="#">BUG_TRACKER</a>
+
+           <div class="navbar-brand">
+            <img src="./img/user1.png" class="profile"  title="<div><h6><%=name %></h6><h6><%= email %></h6></div>" data-toggle="tooltip" style="width:30px;height:30px">
+            <img src="./img/out.png"  onclick="logout()" style="cursor:pointer;width:30px;height:30px">
+          </div>
+        </nav>
+
+
+    <div style="width:100%;height:100%;position:fixed">
+
+
+
+    <div style="position:fixed;right:0px;;width:90%;height:100%;padding:10px;">
+
+       <div style="width:100%;margin-top:20px;margin-bottom:50px;position:absolute;height:100%;width:100%;display:flex;flex-flow:row wrap;justify-content:space-around;">
+       <div style="width:10%;padding-top:20px;padding-left:10px">
+
+          <div>
+           <h3 style="color:blue;font-weight:1em;font-size:1.2em">Bugs &#9632;</h3>
+           <h3 style="color:purple;font-weight:1em;font-size:1.2em">Milestones &#9632;</h3>
+           <h3 style="color:green;font-weight:1em;font-size:1.2em">Events &#9632;</h3>
+         </div>
+
+         <br/>
+
+         <div>
+          <select onchange="give()" id="month" style="font-size:1.5em">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+          </select>
+         </div>
+
+         <br/>
+
+         <div>
+          <button id="b1" style="font-size:1.5em;display:inline-block">&lArr;</button>
+          <p id="year" style="color:black;font-size:1.5em;display:inline-block"><%= year %></p>
+          <button id="b2" style="font-size:1.5em;display:inline-block">&rArr;</button>
+         </div>
+
+         <div style="width:10%">
+
+           <div id="which" style="background-color: yellow;display:none;height:500px;margin-top:10px;width:80px;cursor:pointer">
+             <div onclick="bug()" style="height:166px;background-color:blue;width:80px;padding-left:40px;padding-top:85px">
+              <p style="transform:  translateX(-50%) translateY(-50%) rotate(-90deg);font-size:1.5em;color:white">Bug</p>
+             </div>
+             <div onclick="milestone()" style="height:166px;background-color:purple;width:80px;padding-left:40px;padding-top:120px" >
+              <p style="transform:  translateX(-50%) translateY(-50%) rotate(-90deg);font-size:1.5em;color:white">Milestones</p>
+             </div>
+             <div onclick="event1()" style="height:166px;background-color:green;width:80px;padding-left:40px;padding-top:90px" >
+              <p style="transform:  translateX(-50%) translateY(-50%) rotate(-90deg);font-size:1.5em;color:white">Event</p>
+             </div>
+           </div>
+         </div>
+
+      </div>
+       <div style="width:85%">
+        <div class="navbar navbar navbar-dark sm-dark" style="width:100%;height:100px;display:flex;justify-content:center;align-items:center">
+           <table id="myTable" style="width:100%;margin-left:auto;margin-right:auto;border:1px solid black">
+            <tr  style="color:white;background-color:#33393B;text-align:center">
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+              <th>Saturday</th>
+              <th>Sunday</th>
+           </tr>
+          </table>
+        </div>
+      </div>
+      </div>
+
+
+      <div id="bug_form" style="background-color:white;z-index:999;display:none;border-radius:3px;box-shadow:10px 5px 5px 5px blue;position:absolute;right:0px;top:0px;width:35%;height:85vh">
+        <div style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);height:7%;width:100%;float:right;position:absolute;right:0px">
+         <h4 style="margin-left:4%;margin-top:2%">New Bug</h4>
+        </div>
+       <div style="overflow-y:scroll;background-color:white;height:100%;width:100%;float:right;position:absolute;top:10%;right:0px;padding:20px">
+
+           <form id="bug1">
+
+             <label for="project" style="font-size:1em">Choose Project</label>
+             <br/>
+             <select type="text" title="project" onclick="set(this.value)" id="project" name="project" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </select>
+
+            <br/>
+            <br/>
+
+            <label for="title" style="font-size:1em">Bug Title</label>
+            <br/>
+            <input type="text" title="title" id="title1" name="title" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+
+            <br/>
+            <br/>
+
+            <label for="overview" style="font-size:1em">Description</label>
+            <textarea name="overview" id="overview1"   style="height:150px;width:100%"></textarea>
+
+            <br/>
+            <br/>
+
+            <label for="assign_to" style="font-size:1em">Assign To</label>
+            <br/>
+            <select type="text" title="assign_to" id="assign_to1" name="assign_to" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </select>
+
+            <br/>
+            <br/>
+
+            <label for="add_follower" style="font-size:1em">Add Followers</label>
+            <br/>
+            <select type="text" title="add_follower" id="add_follower1"  name="add_follower" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </select>
+
+            <br/>
+            <br/>
+
+
+            <div style="padding-left:20px;padding-right:20px;width:100%;height:60px;border:5px solid grey;text-align:center;line-height:3;cursor:pointer">
+              <p style="float:left">Drop files or Add attachment</p>
+              <label for="file" style="text-align:center;color:blue;float:right">Click</label>
+              <input type="file" title="file" name="file" id="file1" style="visibility:hidden;">
+              <br/>
+            </div>
+
+
+
+            <br/>
+            <br/>
+
+            <h6 style="color:blue">Bug Info</h6>
+            <hr/>
+
+
+            <label for="tag" style="font-size:1em">Tags</label>
+            <br/>
+            <input type="text" title="tag" id="tag1" name="tag"  style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+
+
+            <br/>
+            <br/>
+
+
+            <div style="float:left;width:43%">
+              <label for="date" style="font-size:1em">Due Date</label>
+              <br/>
+              <input type="date" title="DUE_DATE" id="date1"  name="date" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </div>
+
+
+            <div style="float:right;width:43%">
+            <label for="severity" style="font-size:1em">Severity</label>
+            <br/>
+            <select type="text" title="severity" id="severity1" name="severity" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+             <option>None</option>
+             <option>Show Stopper</option>
+             <option>Critical</option>
+             <option>Major</option>
+             <option>Minor</option>
+            </select>
+            </div>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <div style="float:left;width:43%">
+              <label for="release" style="font-size:1em">Release Milestones</label>
+              <br/>
+              <select type="text" title="Release Milestone"  id="release1" name="release" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+              </select>
+            </div>
+
+            <div style="float:right;width:43%">
+            <label for="affect" style="font-size:1em">Affected Milestones</label>
+            <br/>
+            <select type="text" title="Affected Milestones"  id="affect1" name="affect" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </select>
+            </div>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <div style="float:left;width:43%">
+              <label for="classify" style="font-size:1em">Classiication</label>
+              <br/>
+              <select type="text" title="classiication" id="classify1" name="classify" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+              <option>None</option>
+              <option>Security</option>
+              <option>Data Loss</option>
+              <option>Crash/Hang</option>
+              <option>Performance</option>
+              <option>UI/Usibility</option>
+              <option>Enhancement</option>
+              <option>Other Bug</option>
+              </select>
+            </div>
+
+
+            <div style="float:right;width:43%">
+            <label for="reproducible" style="font-size:1em">Reproducible</label>
+            <br/>
+            <select type="text" title="Reproducible" id="reproducible1" name="reproducible" style="border-radius:5px;width:100%;font-size:1  em;border-color:#D3D3D3">
+              <option>None</option>
+              <option>Always</option>
+              <option>Sometime</option>
+              <option>Rarely</option>
+              <option>Unable</option>
+              <option>Never Tried</option>
+              <option>Not Applicable</option>
+              <option>Other Bug</option>
+            </select>
+            </div>
+
+           <br/>
+           <br/>
+           <br/>
+           <br/>
+
+           <input type="submit" id="submit1" value="Add" class="btn btn-primary"   style="margin-right:10px">
+           <input type="submit" id="submit11" style="display:none" value="Update" class="btn btn-primary" style="margin-right:20px">
+           <p class="btn btn-light" id="cancel1" onclick="clear()" style="border-color:grey;margin-top:12px;">Cancel</p>
+
+          </form>
+
+        </div>
+      </div>
+
+      <div id="event_form" style="background-color:white;z-index:999;display:none;border-radius:3px;box-shadow:10px 5px 5px 5px blue;position:absolute;right:0px;top:0px;width:35%;height:85vh">
+
+        <div style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);height:7%;width:100%;float:right;position:absolute;right:0px">
+          <h4 style="margin-left:4%;margin-top:2%">Create Event</h4>
+        </div>
+
+        <div style="overflow-y:scroll;background-color:white;height:100%;width:100%;float:right;position:absolute;top:10%;right:0px;padding:20px">
+
+            <form id="event1">
+
+
+           <label for="project" style="font-size:1em">Choose Project</label>
+           <br/>
+           <select type="text" title="project" onclick="set(this.value)" id="project2" name="project" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+           </select>
+
+           <br/>
+           <br/>
+
+
+            <label for="title" style="font-size:1.1em">Event Title</label>
+            <br/>
+            <input type="text" title="title" id="title2" name="title" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+
+            <br/>
+            <br/>
+
+            multi-date-event: <input type="checkbox" id="myCheck" value=TRUE onclick="check()">
+            <br/>
+            <br/>
+
+           <div id="single" style="display:block">
+            <div style="float:left;width:35%">
+            <label for="start" style="font-size:1.1em">Schedule Date</label>
+            <br/>
+            <input type="date" title="start" id="start_single2" name="start" style="border-radius:5px;width:100%;font-size:1.2em;border-color:#D3D3D3">
+            </div>
+
+            <div style="float:left;margin-left:10px;margin-right:10px">
+            <label for="start_time" style="font-size:1em">Start</label>
+            <br/>
+            <select type="text" title="start_time" id="start_time_single2" name="start_time" style="border-radius:5px;width:100%;font-size:1.2em;border-color:#D3D3D3">
+             <option>12:00 am</option>
+             <option>12:30 am</option>
+             <option>1:00 am</option>
+             <option>1:30 am</option>
+             <option>2:00 am</option>
+             <option>2:30 am</option>
+             <option>3:00 am</option>
+             <option>3:30 am</option>
+             <option>4:00 am</option>
+             <option>4:30 am</option>
+             <option>5:00 am</option>
+             <option>5:30 am</option>
+             <option>6:00 am</option>
+             <option>6:30 am</option>
+             <option>7:00 am</option>
+             <option>7:30 am</option>
+             <option>8:00 am</option>
+             <option>8:30 am</option>
+             <option>9:00 am</option>
+             <option>9:30 am</option>
+             <option>10:00 am</option>
+             <option>10:30 am</option>
+             <option>11:00 am</option>
+             <option>11:30 am</option>
+             <option>12:00 pm</option>
+             <option>12:30 pm</option>
+             <option>1:00 pm</option>
+             <option>1:30 pm</option>
+             <option>2:00 pm</option>
+             <option>2:30 pm</option>
+             <option>3:00 pm</option>
+             <option>3:30 pm</option>
+             <option>4:00 pm</option>
+             <option>4:30 pm</option>
+             <option>5:00 pm</option>
+             <option>5:30 pm</option>
+             <option>6:00 pm</option>
+             <option>6:30 pm</option>
+             <option>7:00 pm</option>
+             <option>7:30 pm</option>
+             <option>8:00 pm</option>
+             <option>8:30 pm</option>
+             <option>9:00 pm</option>
+             <option>9:30 pm</option>
+             <option>10:00 pm</option>
+             <option>10:30 pm</option>
+             <option>11:00 pm</option>
+             <option>11:30 pm</option>
+            </select>
+            </div>
+
+            <div style="float:left">
+            <label for="end_time" style="font-size:1em">End</label>
+            <br/>
+            <select type="text" title="end_time" id="end_time_single2" name="end_time_single" style="border-radius:5px;width:100%;font-size:1.2em;border-color:#D3D3D3">
+             <option>12:00 am</option>
+             <option>12:30 am</option>
+             <option>1:00 am</option>
+             <option>1:30 am</option>
+             <option>2:00 am</option>
+             <option>2:30 am</option>
+             <option>3:00 am</option>
+             <option>3:30 am</option>
+             <option>4:00 am</option>
+             <option>4:30 am</option>
+             <option>5:00 am</option>
+             <option>5:30 am</option>
+             <option>6:00 am</option>
+             <option>6:30 am</option>
+             <option>7:00 am</option>
+             <option>7:30 am</option>
+             <option>8:00 am</option>
+             <option>8:30 am</option>
+             <option>9:00 am</option>
+             <option>9:30 am</option>
+             <option>10:00 am</option>
+             <option>10:30 am</option>
+             <option>11:00 am</option>
+             <option>11:30 am</option>
+             <option>12:00 pm</option>
+             <option>12:30 pm</option>
+             <option>1:00 pm</option>
+             <option>1:30 pm</option>
+             <option>2:00 pm</option>
+             <option>2:30 pm</option>
+             <option>3:00 pm</option>
+             <option>3:30 pm</option>
+             <option>4:00 pm</option>
+             <option>4:30 pm</option>
+             <option>5:00 pm</option>
+             <option>5:30 pm</option>
+             <option>6:00 pm</option>
+             <option>6:30 pm</option>
+             <option>7:00 pm</option>
+             <option>7:30 pm</option>
+             <option>8:00 pm</option>
+             <option>8:30 pm</option>
+             <option>9:00 pm</option>
+             <option>9:30 pm</option>
+             <option>10:00 pm</option>
+             <option>10:30 pm</option>
+             <option>11:00 pm</option>
+             <option>11:30 pm</option>
+            </select>
+            </div>
+
+            <br/>
+            <br/>
+           </div>
+
+
+            <div id="multi" style="display:none">
+            <div style="width:30%;display:inline-block">
+            <label for="from" style="font-size:1.1em">From</label>
+            <br/>
+            <input type="date" title="from" id="from2" name="from" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </div>
+
+            <div style="width:30%;display:inline-block;margin-left:10px;margin-right:10px">
+            <label for="to" style="font-size:1.1em">To</label>
+            <br/>
+            <input type="date" title="to" id="to2"   name="to" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </div>
+
+            <br/>
+            <br/>
+
+            <div style="display:inline-block;margin-left:10px;margin-right:10px">
+            <label for="start_time" style="font-size:1.1em">Start</label>
+            <br/>
+            <select type="text" title="start_time" id="start_time_multi2" name="start_time" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+             <option>12:00 am</option>
+             <option>12:30 am</option>
+             <option>1:00 am</option>
+             <option>1:30 am</option>
+             <option>2:00 am</option>
+             <option>2:30 am</option>
+             <option>3:00 am</option>
+             <option>3:30 am</option>
+             <option>4:00 am</option>
+             <option>4:30 am</option>
+             <option>5:00 am</option>
+             <option>5:30 am</option>
+             <option>6:00 am</option>
+             <option>6:30 am</option>
+             <option>7:00 am</option>
+             <option>7:30 am</option>
+             <option>8:00 am</option>
+             <option>8:30 am</option>
+             <option>9:00 am</option>
+             <option>9:30 am</option>
+             <option>10:00 am</option>
+             <option>10:30 am</option>
+             <option>11:00 am</option>
+             <option>11:30 am</option>
+             <option>12:00 pm</option>
+             <option>12:30 pm</option>
+             <option>1:00 pm</option>
+             <option>1:30 pm</option>
+             <option>2:00 pm</option>
+             <option>2:30 pm</option>
+             <option>3:00 pm</option>
+             <option>3:30 pm</option>
+             <option>4:00 pm</option>
+             <option>4:30 pm</option>
+             <option>5:00 pm</option>
+             <option>5:30 pm</option>
+             <option>6:00 pm</option>
+             <option>6:30 pm</option>
+             <option>7:00 pm</option>
+             <option>7:30 pm</option>
+             <option>8:00 pm</option>
+             <option>8:30 pm</option>
+             <option>9:00 pm</option>
+             <option>9:30 pm</option>
+             <option>10:00 pm</option>
+             <option>10:30 pm</option>
+             <option>11:00 pm</option>
+             <option>11:30 pm</option>
+            </select>
+            </div>
+
+            <div style="display:inline-block">
+            <label for="end_time" style="font-size:1.1em">End</label>
+            <br/>
+            <select type="text" title="end_time" id="end_time_multi2" name="end_time" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+             <option>12:00 am</option>
+             <option>12:30 am</option>
+             <option>1:00 am</option>
+             <option>1:30 am</option>
+             <option>2:00 am</option>
+             <option>2:30 am</option>
+             <option>3:00 am</option>
+             <option>3:30 am</option>
+             <option>4:00 am</option>
+             <option>4:30 am</option>
+             <option>5:00 am</option>
+             <option>5:30 am</option>
+             <option>6:00 am</option>
+             <option>6:30 am</option>
+             <option>7:00 am</option>
+             <option>7:30 am</option>
+             <option>8:00 am</option>
+             <option>8:30 am</option>
+             <option>9:00 am</option>
+             <option>9:30 am</option>
+             <option>10:00 am</option>
+             <option>10:30 am</option>
+             <option>11:00 am</option>
+             <option>11:30 am</option>
+             <option>12:00 pm</option>
+             <option>12:30 pm</option>
+             <option>1:00 pm</option>
+             <option>1:30 pm</option>
+             <option>2:00 pm</option>
+             <option>2:30 pm</option>
+             <option>3:00 pm</option>
+             <option>3:30 pm</option>
+             <option>4:00 pm</option>
+             <option>4:30 pm</option>
+             <option>5:00 pm</option>
+             <option>5:30 pm</option>
+             <option>6:00 pm</option>
+             <option>6:30 pm</option>
+             <option>7:00 pm</option>
+             <option>7:30 pm</option>
+             <option>8:00 pm</option>
+             <option>8:30 pm</option>
+             <option>9:00 pm</option>
+             <option>9:30 pm</option>
+             <option>10:00 pm</option>
+             <option>10:30 pm</option>
+             <option>11:00 pm</option>
+             <option>11:30 pm</option>
+            </select>
+            </div>
+            </div>
+
+
+
+            <br/>
+            <br/>
+
+            <div styyle="display:block">
+            <label for="user" style="font-size:1.1em">Attendes</label>
+            <br/>
+            <select type="text" title="user" id="user2"   name="user" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </select>
+            </div>
+
+            <br/>
+
+
+            <div style="float:left;width:43%">
+              <label for="location" style="font-size:1.1em">location</label>
+              <br/>
+              <input type="text" title="location"  id="location2" name="location" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </div>
+
+            <div style="float:right;width:43%">
+            <label for="repeat" style="font-size:1.1em">Repeat</label>
+            <select type="text" title="repeat" id="repeat2" name="repeat" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+             <option>Only Once</option>
+             <option>Every Day</option>
+             <option>Every Week</option>
+             <option>Every Month</option>
+             <option>Every Year</option>
+            </select>
+            </div>
+
+
+            <br/>
+            <br/>
+            <br/>
+
+            <label for="overview2" style="font-size:1.1em">Description</label>
+            <textarea name="overview2" id="overview2"  style="height:150px;width:100%"></textarea>
+
+            <div style="position:fixed;bottom:0px">
+            <input type="submit" id="submit2"  value="Add" class="btn btn-primary"   style="margin-right:10px">
+            <input type="submit" id="submit22" style="display:none" value="Update" class="btn btn-primary"   style="margin-right:10px">
+            <p class="btn btn-light" id="cancel2"  style="border-color:grey;margin-top:12px">Cancel</p>
+           </div>
+
+          </form>
+
+        </div>
+      </div>
+
+      <div id="milestone_form" style="background-color:white;z-index:999;display:none;border-radius:3px;box-shadow:10px 5px 5px 5px blue;position:absolute;right:0px;top:0px;width:35%;height:85vh">
+
+        <div style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);height:7%;width:100%;float:right;position:absolute;right:0px">
+          <h4 style="margin-left:4%;margin-top:2%">Create MileStone</h4>
+        </div>
+
+        <div style="overflow-y:scroll;background-color:white;height:100%;width:100%;float:right;position:absolute;top:10%;right:0px;padding:20px">
+
+            <form id="milestone">
+
+
+            <label for="project" style="font-size:1em">Choose Project</label>
+             <br/>
+             <select type="text" title="project" onclick="set(this.value)" id="project3" name="project" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </select>
+
+            <br/>
+            <br/>
+
+
+            <label for="title" style="font-size:1.1em">Milestone</label>
+            <br/>
+            <input type="text" title="title" id="title3" name="title" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+
+
+            <br/>
+            <br/>
+
+           <div style="display:block">
+            <div style="float:left;width:35%">
+             <label for="start" style="font-size:1.1em">Start Date</label>
+             <br/>
+             <input type="date" title="start" id="start3" name="start" style="border-radius:5px;width:100%;font-size:1.2em;border-color:#D3D3D3">
+            </div>
+            <div style="float:right;width:35%">
+             <label for="end" style="font-size:1.1em">End Date</label>
+             <br/>
+             <input type="date" title="end" id="end3" name="end" style="border-radius:5px;width:100%;font-size:1.2em;border-color:#D3D3D3">
+            </div>
+             <br/>
+             <br/>
+           </div>
+
+            <br/>
+            <br/>
+
+          <div style="display:block">
+            <div style="float:left;width:43%">
+            <label for="user" style="font-size:1.1em">Who is responsible?</label>
+            <br/>
+            <select type="text" title="user" id="user3"   name="user" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+            </select>
+            </div>
+
+            <div style="float:right;width:43%">
+            <label for="flag" style="font-size:1.1em">Milestone Flag</label>
+            <select type="text" title="flag" id="flag3" name="flag" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3">
+             <option>Internal</option>
+             <option>External</option>
+            </select>
+            </div>
+          </div>
+
+            <br/>
+            <br/>
+            <br/>
+
+
+            <label for="tag" style="font-size:1.1em">Tag</label>
+            <input type="text" name="tag" id="tag3" style="border-radius:5px;width:100%;font-size:1em;border-color:#D3D3D3" />
+
+            <div style="position:fixed;bottom:0px">
+              <input type="submit" id="submit3"  value="Add" class="btn btn-primary"   style="margin-right:10px">
+              <input type="submit" id="submit33" style="display:none" value="Update" class="btn btn-primary"   style="margin-right:10px">
+              <p class="btn btn-light" id="cancel3"  style="border-color:grey;margin-top:12px">Cancel</p>
+           </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div style="position: fixed;left:0px;;width:10%;height:102.5%;background-color:#212529;padding-top:20px;padding-left:15px">
+      <i class="fa fa-home" style="color:yellow;font-size:1.5em">    <a href="/admin?email=<%=email%>" style="text-decoration:none;color:white">Home</a></i>
+      <br/>
+      <br/>
+      <i class='far fa-comments' style="color:yellow;font-size:1.5em">      <a href="chat?email=<%=email%>&name=<%=name%>" style="text-decoration:none;color:white">Discuss</a></i>
+      <br/>
+      <br/>
+      <i class='fas fa-calendar-alt' style="color:yellow;font-size:1.5em">   <a href="/calender?project=&name=<%=name%>&email=<%=email%>&post=" style="text-decoration:none;color:white">Calender</a></i>
+      <br/>
+      <br/>
+      <i class="fa fa-archive"  style="color:yellow;font-size:1.5em">   <a href="/project?email=<%=email%>&name=<%=name%>" style="text-decoration:none;color:white">Project</a></i>
+    </div>
+
+
+    </div>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+   <script type = "text/javascript"
+    src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+  </script>
+
+ <script type = "text/javascript"
+    src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+ </script>
+   <script src="calender.js"></script>
+   <script src="calender_event.js"></script> -->
+   <script src="calender_bug.js"></script>
+   <script src="calender_milestone.js"></script>
+
+
+
+
+ </body>
+</html>
