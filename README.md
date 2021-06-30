@@ -1,6 +1,7 @@
-
 # bug-tracker
 A bug tracking system or defect tracking system is a software application that keeps track of reported software bugs in software development projects. It may be regarded as a type of issue tracking system.
+
+https://user-images.githubusercontent.com/60310438/124023975-3d6dc980-da0c-11eb-9700-5236ee4b3683.mov
 
 
 ![Screenshot from 2021-05-22 20-47-59](https://user-images.githubusercontent.com/60310438/119231780-35cf2100-bb40-11eb-9804-19294e096ef0.png)
