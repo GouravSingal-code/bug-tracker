@@ -28,7 +28,7 @@ const options = {
 };
 
 var url ='mongodb://localhost:27017/gourav';
-//var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/gourav';
+//var mongoURI = process.env.CONNECTION_STRING || 'mongodb://localhost:27017/gourav';
 
 mongoose.connect(url , options );
 
