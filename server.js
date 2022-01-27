@@ -27,7 +27,7 @@ const options = {
   useFindAndModify: false,
 };
 
-var url ='mongodb://localhost:27017/gourav';
+var url = process.env.CONNECTION_STRING;
 //var mongoURI = process.env.CONNECTION_STRING || 'mongodb://localhost:27017/gourav';
 
 mongoose.connect(url , options );
