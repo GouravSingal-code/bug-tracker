@@ -12,7 +12,7 @@ const options = {
 
 
 
-var url = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/gourav';
+var url = process.env.CONNECTION_STRING || 'mongodb://127.0.0.1:27017/gourav';
 
 mongoose.connect(url , options );
 var db = mongoose.connection;
