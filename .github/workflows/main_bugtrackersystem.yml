@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'BugTrackerSystem'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E2C19F9E53F94263B064191C332255B1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8C8B3C6C041B4040A1B567967DC8D402 }}
           package: .
